@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>thi module 1-bai1</title>
+</head>
+<body>
+<label><input id="textvalue"></label>
+<button id="add" onclick="addArray()">ADD</button>
+<button id="display" onclick="display()">display</button>
+<button onclick="checkN()">CHECK N</button>
+<button onclick="average()">averageOdd in Even</button>
+<div id="screen"></div>
+
+<script>
+    let array = [];
+    let x = 0
+
+    function addArray() {
+        if (x < 50) {
+            array[x] = document.getElementById('textvalue').value;
+            x++;
+            document.getElementById('textvalue').value = "";
+        }
+    }
+
+    function display() {
+        document.getElementById('screen').innerHTML = 'array =' + array;
+    }
+
+    function checkN() {
+        document.getElementById('screen').innerHTML = 'n bang' + (x);
+    }
+
+    function average() {
+        let sum = 0;
+        let array1=[];
+        let x = 0;
+        let count = 0;
+        for (let i = 0; i < array.length; i++) {
+            if (i % 2 === 0) {
+               array1[x]=array[i];
+               x++;
+            }
+        }
+
+        for(let j = 0;j<array1.length;j++){
+            if(array1[j]%2!==0) {
+                sum += array1[j] / 1
+                count++
+            }
+        }
+        averageX=sum/count
+        document.getElementById('screen').innerHTML=averageX;
+    }
+</script>
+</body>
+</html>
